@@ -169,18 +169,18 @@ allSections.forEach(section => {
 function lazyLoad(entries, observer) {
   const [entire] = entries;
   if (!entire.isIntersecting) return;
-  (async function () {
-    try {
-      entire.target.src = await entire.target.dataset.src;
-      entire.target.classList.remove('lazy-img');
-    } catch (err) {
-      console.error(`2: ${err.message} 💥`);
-    }
-  })();
-  // entire.target.src = entire.target.dataset.src;
-  // entire.target.addEventListener('load', () => {
-  //   entire.target.classList.remove('lazy-img');
-  // });
+  // (async function () {
+  //   try {
+  //     entire.target.src = await entire.target.dataset.src;
+  //     entire.target.classList.remove('lazy-img');
+  //   } catch (err) {
+  //     console.error(`2: ${err.message} 💥`);
+  //   }
+  // })();
+  entire.target.src = entire.target.dataset.src;
+  entire.target.addEventListener('load', () => {
+    entire.target.classList.remove('lazy-img');
+  });
   // observer.unobserve(entire.target);
 }
 const lazyLoadingObserver = new IntersectionObserver(lazyLoad, {
