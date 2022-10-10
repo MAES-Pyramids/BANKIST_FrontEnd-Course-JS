@@ -3,3 +3,5 @@
 
 - BANKIST implements lazy image loading for better performance 
 - BANKIST implements some JS design ideas like a sticky navigation bar or sections Revealing scroll 
+
+#### You can access hosted site from [Here](https://master--bankist-staticweb-maes.netlify.app/)
